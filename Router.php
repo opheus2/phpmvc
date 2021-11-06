@@ -1,8 +1,8 @@
 <?php
 
-namespace App\core;
+namespace orpheusohms\phpmvc;
 
-use App\Core\Exceptions\NotFoundException;
+use orpheusohms\phpmvc\Exceptions\NotFoundException;
 
 class Router
 {
@@ -47,7 +47,7 @@ class Router
         }
 
         if (is_array($callback)) {
-            /**@var \App\core\Controller $controller */
+            /**@var \orpheusohms\phpmvc\Controller $controller */
             $controller = new $callback[0]();
             Application::$app->controller = $controller;
             $controller->action = $callback[1];

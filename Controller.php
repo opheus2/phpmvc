@@ -1,8 +1,8 @@
 <?php
 
-namespace App\core;
+namespace orpheusohms\phpmvc;
 
-use App\Core\Middlewares\BaseMiddleware;
+use orpheusohms\phpmvc\Middlewares\BaseMiddleware;
 
 class Controller
 {
@@ -10,7 +10,7 @@ class Controller
     public string $action = '';
 
     /** 
-     * @var \App\Core\Middlewares\BaseMiddleware[] 
+     * @var \orpheusohms\phpmvc\Middlewares\BaseMiddleware[] 
      */
     protected array $middlewares = [];
 
@@ -37,7 +37,7 @@ class Controller
     /**
      * Get the value of middlewares
      *
-     * @return  \App\Core\Middlewares\BaseMiddleware[]
+     * @return  \orpheusohms\phpmvc\Middlewares\BaseMiddleware[]
      */ 
     public function getMiddlewares()
     {

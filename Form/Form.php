@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Core\Form;
+namespace orpheusohms\phpmvc\Form;
 
-use App\core\Model;
+use orpheusohms\phpmvc\Model;
 
 class Form
 {

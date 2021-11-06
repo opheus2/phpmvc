@@ -1,8 +1,8 @@
 <?php
 
-namespace App\core;
+namespace orpheusohms\phpmvc;
 
-use App\Core\Application;
+use orpheusohms\phpmvc\Application;
 
 abstract class Model
 {
