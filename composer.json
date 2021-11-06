@@ -17,6 +17,9 @@
   "autoload": {
     "psr-4": {
       "orpheusohms\\phpmvc\\": "./"
-    }
+    },
+    "files": [
+      "helpers.php"
+    ]
   }
 }
