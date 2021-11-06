@@ -1,0 +1,17 @@
+{
+    "name": "orpheusohms/php-mvc-core",
+    "description": "a mini php mvc framework",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Orpheusohms\\PhpMvcCore\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "opheus2",
+            "email": "ominiabohsdavid@gmail.com"
+        }
+    ],
+    "require": {}
+}
