@@ -7,10 +7,12 @@
       "email": "ominiabohsdavid@gmail.com"
     }
   ],
-  "require": {},
+  "require": {
+    "rakit/validation": "^1.4"
+  },
   "autoload": {
     "psr-4": {
-      "orpheusohms\\phpmvc\\": "./"
+      "orpheusohms\\phpmvc\\": "."
     },
     "files": [
       "helpers.php"
