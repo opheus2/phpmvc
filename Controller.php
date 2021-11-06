@@ -2,7 +2,7 @@
 
 namespace orpheusohms\phpmvc;
 
-use orpheusohms\phpmvc\Middlewares\BaseMiddleware;
+use orpheusohms\phpmvc\BaseMiddleware;
 
 class Controller
 {
@@ -10,7 +10,7 @@ class Controller
     public string $action = '';
 
     /** 
-     * @var \orpheusohms\phpmvc\Middlewares\BaseMiddleware[] 
+     * @var \orpheusohms\phpmvc\BaseMiddleware[] 
      */
     protected array $middlewares = [];
 
@@ -18,17 +18,35 @@ class Controller
     {
         $this->layout = $layout;
     }
-
-    public function render($view, $params = [])
+    
+    /**
+     * Render page templating
+     *
+     * @param  mixed $view
+     * @param  mixed $params
+     * @param  mixed $errors
+     */
+    public function render($view, array $params = [], array $errors = [])
     {
-        return Application::$app->view->renderView($view, $params);
+        return app()->view->renderView($view, $params, $errors);
     }
-
+    
+    /**
+     * redirect to another url/path
+     *
+     * @param  mixed $url
+     */
     public function redirect(string $url)
     {
-        return Application::$app->response->redirect($url);
+        return app()->response->redirect($url);
     }
-
+    
+    /**
+     * add a middleware to the controller
+     *
+     * @param  mixed $middleware
+     * @return void
+     */
     public function registerMiddleWare(BaseMiddleware $middleware)
     {
         $this->middlewares[] = $middleware;
@@ -37,7 +55,7 @@ class Controller
     /**
      * Get the value of middlewares
      *
-     * @return  \orpheusohms\phpmvc\Middlewares\BaseMiddleware[]
+     * @return  \orpheusohms\phpmvc\BaseMiddleware[]
      */ 
     public function getMiddlewares()
     {

@@ -8,7 +8,7 @@ class Router
 {
     protected array $routes = [];
     public Response $response;
-    public Request $request;
+    public $request;
 
     /**
      * __construct
@@ -17,7 +17,7 @@ class Router
      * @param  mixed $response
      * @return void
      */
-    public function __construct(Request $request, Response $response)
+    public function __construct($request, Response $response)
     {
         $this->request = $request;
         $this->response = $response;
@@ -25,12 +25,12 @@ class Router
 
     public function get($path, $callback)
     {
-        $this->routes['get'][$path] = $callback;
+        $this->routes['GET'][$path] = $callback;
     }
 
     public function post($path, $callback)
     {
-        $this->routes['post'][$path] = $callback;
+        $this->routes['POST'][$path] = $callback;
     }
 
     public function resolve()
@@ -38,23 +38,27 @@ class Router
         $path = $this->request->getPath();
         $method = $this->request->method();
         $callback = $this->routes[$method][$path] ?? false;
-        if ($callback === false) {
+        if ($callback === false) 
+        {
             throw new NotFoundException("Page not found");
         }
 
-        if (is_string($callback)) {
-            return Application::$app->view->renderView($callback);
+        if (is_string($callback)) 
+        {
+            return app()->view->renderView($callback);
         }
 
-        if (is_array($callback)) {
+        if (is_array($callback)) 
+        {
             /**@var \orpheusohms\phpmvc\Controller $controller */
             $controller = new $callback[0]();
-            Application::$app->controller = $controller;
+            app()->controller = $controller;
             $controller->action = $callback[1];
 
             $callback[0] = $controller;
 
-            foreach ($controller->getMiddlewares() as $middleware) {
+            foreach ($controller->getMiddlewares() as $middleware) 
+            {
                 $middleware->execute();
             }
         }
