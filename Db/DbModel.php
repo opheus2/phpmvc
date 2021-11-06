@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Core\Db;
+namespace orpheusohms\phpmvc\Db;
 
-use App\core\Model;
-use App\Core\Application;
+use orpheusohms\phpmvc\Model;
+use orpheusohms\phpmvc\Application;
 
 abstract class DbModel extends Model
 {

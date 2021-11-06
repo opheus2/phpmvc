@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Core;
+namespace orpheusohms\phpmvc;
 
-use App\Core\Db\DbModel;
-use App\Core\Db\Database;
+use orpheusohms\phpmvc\Db\DbModel;
+use orpheusohms\phpmvc\Db\Database;
 
 /**
  * Application

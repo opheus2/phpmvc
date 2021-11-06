@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Core\Db;
+namespace orpheusohms\phpmvc\Db;
 
 use PDO;
-use App\Core\Application;
+use orpheusohms\phpmvc\Application;
 
 class Database
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Core;
+namespace orpheusohms\phpmvc;
 
 class Session
 {
